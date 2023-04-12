@@ -14,6 +14,15 @@
 		D688305229E75C1600F4D7DA /* FlashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688305129E75C1600F4D7DA /* FlashTests.swift */; };
 		D688305C29E75C1600F4D7DA /* FlashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688305B29E75C1600F4D7DA /* FlashUITests.swift */; };
 		D688305E29E75C1600F4D7DA /* FlashUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688305D29E75C1600F4D7DA /* FlashUITestsLaunchTests.swift */; };
+		D688306C29E75C6000F4D7DA /* DirtyCowKit in Frameworks */ = {isa = PBXBuildFile; productRef = D688306B29E75C6000F4D7DA /* DirtyCowKit */; };
+		D688306F29E75C7000F4D7DA /* AbsoluteSolver in Frameworks */ = {isa = PBXBuildFile; productRef = D688306E29E75C7000F4D7DA /* AbsoluteSolver */; };
+		D688308329E75D0A00F4D7DA /* Alert++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688307D29E75D0A00F4D7DA /* Alert++.swift */; };
+		D688308429E75D0A00F4D7DA /* String++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688307E29E75D0A00F4D7DA /* String++.swift */; };
+		D688308529E75D0A00F4D7DA /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688307F29E75D0A00F4D7DA /* View++.swift */; };
+		D688308629E75D0A00F4D7DA /* Haptic++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688308029E75D0A00F4D7DA /* Haptic++.swift */; };
+		D688308729E75D0A00F4D7DA /* FM++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688308129E75D0A00F4D7DA /* FM++.swift */; };
+		D688308829E75D0A00F4D7DA /* Color++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688308229E75D0A00F4D7DA /* Color++.swift */; };
+		D688308A29E7684200F4D7DA /* AppFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688308929E7684200F4D7DA /* AppFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +53,13 @@
 		D688305729E75C1600F4D7DA /* FlashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D688305B29E75C1600F4D7DA /* FlashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashUITests.swift; sourceTree = "<group>"; };
 		D688305D29E75C1600F4D7DA /* FlashUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D688307D29E75D0A00F4D7DA /* Alert++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alert++.swift"; sourceTree = "<group>"; };
+		D688307E29E75D0A00F4D7DA /* String++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String++.swift"; sourceTree = "<group>"; };
+		D688307F29E75D0A00F4D7DA /* View++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
+		D688308029E75D0A00F4D7DA /* Haptic++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Haptic++.swift"; sourceTree = "<group>"; };
+		D688308129E75D0A00F4D7DA /* FM++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FM++.swift"; sourceTree = "<group>"; };
+		D688308229E75D0A00F4D7DA /* Color++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color++.swift"; sourceTree = "<group>"; };
+		D688308929E7684200F4D7DA /* AppFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D688306F29E75C7000F4D7DA /* AbsoluteSolver in Frameworks */,
+				D688306C29E75C6000F4D7DA /* DirtyCowKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				D688304029E75C1300F4D7DA /* FlashApp.swift */,
+				D688307029E75CCA00F4D7DA /* Extensions */,
 				D688304229E75C1300F4D7DA /* ContentView.swift */,
+				D688308929E7684200F4D7DA /* AppFunctions.swift */,
 				D688304429E75C1600F4D7DA /* Assets.xcassets */,
 				D688304629E75C1600F4D7DA /* Preview Content */,
 			);
@@ -127,6 +147,19 @@
 			path = FlashUITests;
 			sourceTree = "<group>";
 		};
+		D688307029E75CCA00F4D7DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D688307D29E75D0A00F4D7DA /* Alert++.swift */,
+				D688308229E75D0A00F4D7DA /* Color++.swift */,
+				D688308129E75D0A00F4D7DA /* FM++.swift */,
+				D688308029E75D0A00F4D7DA /* Haptic++.swift */,
+				D688307E29E75D0A00F4D7DA /* String++.swift */,
+				D688307F29E75D0A00F4D7DA /* View++.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +176,10 @@
 			dependencies = (
 			);
 			name = Flash;
+			packageProductDependencies = (
+				D688306B29E75C6000F4D7DA /* DirtyCowKit */,
+				D688306E29E75C7000F4D7DA /* AbsoluteSolver */,
+			);
 			productName = Flash;
 			productReference = D688303D29E75C1300F4D7DA /* Flash.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +252,10 @@
 				Base,
 			);
 			mainGroup = D688303429E75C1300F4D7DA;
+			packageReferences = (
+				D688306A29E75C6000F4D7DA /* XCRemoteSwiftPackageReference "DirtyCowKit" */,
+				D688306D29E75C7000F4D7DA /* XCRemoteSwiftPackageReference "AbsoluteSolver" */,
+			);
 			productRefGroup = D688303E29E75C1300F4D7DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +298,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D688308629E75D0A00F4D7DA /* Haptic++.swift in Sources */,
 				D688304329E75C1300F4D7DA /* ContentView.swift in Sources */,
+				D688308329E75D0A00F4D7DA /* Alert++.swift in Sources */,
+				D688308529E75D0A00F4D7DA /* View++.swift in Sources */,
+				D688308A29E7684200F4D7DA /* AppFunctions.swift in Sources */,
+				D688308429E75D0A00F4D7DA /* String++.swift in Sources */,
+				D688308829E75D0A00F4D7DA /* Color++.swift in Sources */,
+				D688308729E75D0A00F4D7DA /* FM++.swift in Sources */,
 				D688304129E75C1300F4D7DA /* FlashApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,17 +468,20 @@
 				DEVELOPMENT_TEAM = 8JKVMYCRTJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Grant full disk access. Required for app functionality.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.Flash;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.AbsoluteSolverTester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -449,17 +500,20 @@
 				DEVELOPMENT_TEAM = 8JKVMYCRTJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Grant full disk access. Required for app functionality.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.Flash;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.AbsoluteSolverTester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -583,6 +637,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D688306A29E75C6000F4D7DA /* XCRemoteSwiftPackageReference "DirtyCowKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BomberFish/DirtyCowKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		D688306D29E75C7000F4D7DA /* XCRemoteSwiftPackageReference "AbsoluteSolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BomberFish/AbsoluteSolver";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D688306B29E75C6000F4D7DA /* DirtyCowKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D688306A29E75C6000F4D7DA /* XCRemoteSwiftPackageReference "DirtyCowKit" */;
+			productName = DirtyCowKit;
+		};
+		D688306E29E75C7000F4D7DA /* AbsoluteSolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D688306D29E75C7000F4D7DA /* XCRemoteSwiftPackageReference "AbsoluteSolver" */;
+			productName = AbsoluteSolver;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D688303529E75C1300F4D7DA /* Project object */;
 }

@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "absolutesolver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BomberFish/AbsoluteSolver",
+      "state" : {
+        "branch" : "main",
+        "revision" : "68ca72ba990bb22d32288e909c61cd59be1a4bdb"
+      }
+    },
+    {
+      "identity" : "dirtycowkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BomberFish/DirtyCowKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5f30c63dd998e47cc72d11d0bd6fb26ab882960f"
+      }
+    }
+  ],
+  "version" : 2
+}
