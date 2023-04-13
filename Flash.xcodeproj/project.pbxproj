@@ -23,6 +23,11 @@
 		D688308729E75D0A00F4D7DA /* FM++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688308129E75D0A00F4D7DA /* FM++.swift */; };
 		D688308829E75D0A00F4D7DA /* Color++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688308229E75D0A00F4D7DA /* Color++.swift */; };
 		D688308A29E7684200F4D7DA /* AppFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688308929E7684200F4D7DA /* AppFunctions.swift */; };
+		D688308D29E8427000F4D7DA /* KernelPanic.m in Sources */ = {isa = PBXBuildFile; fileRef = D688308C29E8427000F4D7DA /* KernelPanic.m */; };
+		D688309429E8434000F4D7DA /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D688309029E8433F00F4D7DA /* IOSurface.framework */; };
+		D688309529E8434000F4D7DA /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D688309129E8433F00F4D7DA /* CoreFoundation.framework */; };
+		D688309629E8434000F4D7DA /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D688309229E8433F00F4D7DA /* IOKit.framework */; };
+		D688309729E8434100F4D7DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D688309329E8434000F4D7DA /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,13 @@
 		D688308129E75D0A00F4D7DA /* FM++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FM++.swift"; sourceTree = "<group>"; };
 		D688308229E75D0A00F4D7DA /* Color++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color++.swift"; sourceTree = "<group>"; };
 		D688308929E7684200F4D7DA /* AppFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFunctions.swift; sourceTree = "<group>"; };
+		D688308B29E8426F00F4D7DA /* Flash-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flash-Bridging-Header.h"; sourceTree = "<group>"; };
+		D688308C29E8427000F4D7DA /* KernelPanic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KernelPanic.m; sourceTree = "<group>"; };
+		D688308E29E8429900F4D7DA /* KernelPanic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KernelPanic.h; sourceTree = "<group>"; };
+		D688309029E8433F00F4D7DA /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
+		D688309129E8433F00F4D7DA /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		D688309229E8433F00F4D7DA /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		D688309329E8434000F4D7DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +79,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D688309529E8434000F4D7DA /* CoreFoundation.framework in Frameworks */,
+				D688309729E8434100F4D7DA /* Foundation.framework in Frameworks */,
+				D688309429E8434000F4D7DA /* IOSurface.framework in Frameworks */,
 				D688306F29E75C7000F4D7DA /* AbsoluteSolver in Frameworks */,
+				D688309629E8434000F4D7DA /* IOKit.framework in Frameworks */,
 				D688306C29E75C6000F4D7DA /* DirtyCowKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +112,7 @@
 				D688305029E75C1600F4D7DA /* FlashTests */,
 				D688305A29E75C1600F4D7DA /* FlashUITests */,
 				D688303E29E75C1300F4D7DA /* Products */,
+				D688308F29E8433E00F4D7DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,9 +132,12 @@
 				D688304029E75C1300F4D7DA /* FlashApp.swift */,
 				D688307029E75CCA00F4D7DA /* Extensions */,
 				D688304229E75C1300F4D7DA /* ContentView.swift */,
+				D688308C29E8427000F4D7DA /* KernelPanic.m */,
+				D688308E29E8429900F4D7DA /* KernelPanic.h */,
 				D688308929E7684200F4D7DA /* AppFunctions.swift */,
 				D688304429E75C1600F4D7DA /* Assets.xcassets */,
 				D688304629E75C1600F4D7DA /* Preview Content */,
+				D688308B29E8426F00F4D7DA /* Flash-Bridging-Header.h */,
 			);
 			path = Flash;
 			sourceTree = "<group>";
@@ -158,6 +178,17 @@
 				D688307F29E75D0A00F4D7DA /* View++.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D688308F29E8433E00F4D7DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D688309129E8433F00F4D7DA /* CoreFoundation.framework */,
+				D688309329E8434000F4D7DA /* Foundation.framework */,
+				D688309229E8433F00F4D7DA /* IOKit.framework */,
+				D688309029E8433F00F4D7DA /* IOSurface.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +263,7 @@
 				TargetAttributes = {
 					D688303C29E75C1300F4D7DA = {
 						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
 					};
 					D688304C29E75C1600F4D7DA = {
 						CreatedOnToolsVersion = 14.3;
@@ -307,6 +339,7 @@
 				D688308829E75D0A00F4D7DA /* Color++.swift in Sources */,
 				D688308729E75D0A00F4D7DA /* FM++.swift in Sources */,
 				D688304129E75C1300F4D7DA /* FlashApp.swift in Sources */,
+				D688308D29E8427000F4D7DA /* KernelPanic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flash/Preview Content\"";
@@ -484,6 +518,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.AbsoluteSolverTester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Flash/Flash-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -494,6 +530,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flash/Preview Content\"";
@@ -516,6 +553,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.AbsoluteSolverTester;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Flash/Flash-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

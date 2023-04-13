@@ -21,7 +21,7 @@ struct ContentView: View {
                     do {
                         try changeSpeed(speed)
                         Haptic.shared.notify(.success)
-                        MacDirtyCow.restartFrontboard()
+                        UIApplication.shared.alert(title: "Success!", body: "Please reboot to see changes.")
                     } catch {
                         Haptic.shared.notify(.error)
                         UIApplication.shared.alert(body: error.localizedDescription)
@@ -30,11 +30,22 @@ struct ContentView: View {
                     .buttonStyle(.borderedProminent)
                     .tint(.accentColor)
                     .padding()
+            
+            if #available(iOS 16.0, *) {
+                Button(action: {
+                    Haptic.shared.play(.medium)
+                    trigger_memmove_oob_copy()
+                }, label: {Label("Reboot (Trigger Kernel Panic)", systemImage: "exclamationmark.arrow.circlepath")})
+                .buttonStyle(.borderedProminent)
+                .tint(.accentColor)
+                .padding()
             }
+            }
+
             .padding()
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
-                    if escaped {
+                    if FileManager.default.isReadableFile(atPath: "/var/mobile") {
                         speed = getSpeed()
                     }
                 }

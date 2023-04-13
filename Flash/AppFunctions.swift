@@ -52,19 +52,27 @@ func getKeysFromDict(from dictionary: [String: Any], prefix: String = "") -> [St
 
 func changeSpeed(_ speed: Double) throws {
     // set stuff
-    let UIKitPrefsFile = URL(fileURLWithPath: "/var/mobile/Library/Preferences/com.apple.UIKit.plist")
-    let UIKitPrefsDict = plistToDict(path: UIKitPrefsFile)
-    // print(UIKitPrefsDict as Any)
-    if UIKitPrefsDict!["UIAnimationDragCoefficient"] != nil {
-        UIKitPrefsDict!["UIAnimationDragCoefficient"] = speed
+    if FileManager.default.isReadableFile(atPath: "/var/mobile") {
+        if FileManager.default.isWritableFile(atPath: "/var/mobile/Library/Preferences/com.apple.UIKit.plist") {
+            let UIKitPrefsFile = URL(fileURLWithPath: "/var/mobile/Library/Preferences/com.apple.UIKit.plist")
+            let UIKitPrefsDict = plistToDict(path: UIKitPrefsFile)
+            print(UIKitPrefsDict as Any)
+            if UIKitPrefsDict!["UIAnimationDragCoefficient"] != nil {
+                UIKitPrefsDict!["UIAnimationDragCoefficient"] = speed
+            } else {
+                UIKitPrefsDict?.setValue(speed, forKey: "UIAnimationDragCoefficient")
+            }
+            print(UIKitPrefsDict as Any)
+            do {
+                try writeDictToPlist(dict: UIKitPrefsDict!, path: UIKitPrefsFile)
+            } catch {
+                throw "Could not write plist, error: \(error.localizedDescription)"
+            }
+        } else {
+            throw "UIKit Prefs is not writable!"
+        }
     } else {
-        UIKitPrefsDict?.setValue(speed, forKey: "UIAnimationDragCoefficient")
-    }
-    // print(UIKitPrefsDict as Any)
-    do {
-        try writeDictToPlist(dict: UIKitPrefsDict!, path: UIKitPrefsFile)
-    } catch {
-        throw "Could not write plist, error: \(error.localizedDescription)"
+         throw "Not unsandboxed?!"
     }
 }
 
