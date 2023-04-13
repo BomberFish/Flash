@@ -17,7 +17,6 @@
 		D688306C29E75C6000F4D7DA /* DirtyCowKit in Frameworks */ = {isa = PBXBuildFile; productRef = D688306B29E75C6000F4D7DA /* DirtyCowKit */; };
 		D688306F29E75C7000F4D7DA /* AbsoluteSolver in Frameworks */ = {isa = PBXBuildFile; productRef = D688306E29E75C7000F4D7DA /* AbsoluteSolver */; };
 		D688308329E75D0A00F4D7DA /* Alert++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688307D29E75D0A00F4D7DA /* Alert++.swift */; };
-		D688308429E75D0A00F4D7DA /* String++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688307E29E75D0A00F4D7DA /* String++.swift */; };
 		D688308529E75D0A00F4D7DA /* View++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688307F29E75D0A00F4D7DA /* View++.swift */; };
 		D688308629E75D0A00F4D7DA /* Haptic++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688308029E75D0A00F4D7DA /* Haptic++.swift */; };
 		D688308729E75D0A00F4D7DA /* FM++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D688308129E75D0A00F4D7DA /* FM++.swift */; };
@@ -59,7 +58,6 @@
 		D688305B29E75C1600F4D7DA /* FlashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashUITests.swift; sourceTree = "<group>"; };
 		D688305D29E75C1600F4D7DA /* FlashUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D688307D29E75D0A00F4D7DA /* Alert++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alert++.swift"; sourceTree = "<group>"; };
-		D688307E29E75D0A00F4D7DA /* String++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String++.swift"; sourceTree = "<group>"; };
 		D688307F29E75D0A00F4D7DA /* View++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View++.swift"; sourceTree = "<group>"; };
 		D688308029E75D0A00F4D7DA /* Haptic++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Haptic++.swift"; sourceTree = "<group>"; };
 		D688308129E75D0A00F4D7DA /* FM++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FM++.swift"; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 				D688308229E75D0A00F4D7DA /* Color++.swift */,
 				D688308129E75D0A00F4D7DA /* FM++.swift */,
 				D688308029E75D0A00F4D7DA /* Haptic++.swift */,
-				D688307E29E75D0A00F4D7DA /* String++.swift */,
 				D688307F29E75D0A00F4D7DA /* View++.swift */,
 			);
 			path = Extensions;
@@ -335,7 +332,6 @@
 				D688308329E75D0A00F4D7DA /* Alert++.swift in Sources */,
 				D688308529E75D0A00F4D7DA /* View++.swift in Sources */,
 				D688308A29E7684200F4D7DA /* AppFunctions.swift in Sources */,
-				D688308429E75D0A00F4D7DA /* String++.swift in Sources */,
 				D688308829E75D0A00F4D7DA /* Color++.swift in Sources */,
 				D688308729E75D0A00F4D7DA /* FM++.swift in Sources */,
 				D688304129E75C1300F4D7DA /* FlashApp.swift in Sources */,

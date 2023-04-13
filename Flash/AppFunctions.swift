@@ -52,32 +52,49 @@ func getKeysFromDict(from dictionary: [String: Any], prefix: String = "") -> [St
 
 func changeSpeed(_ speed: Double) throws {
     // set stuff
-    if FileManager.default.isReadableFile(atPath: "/var/mobile") {
+    let fm = FileManager.default
+    if fm.isReadableFile(atPath: "/var/mobile") {
         print("Unsandboxed")
-        if FileManager.default.isWritableFile(atPath: "/var/mobile/Library/Preferences/com.apple.UIKit.plist") {
-            print("Can write to plist   ")
-            let UIKitPrefsFile = URL(fileURLWithPath: "/var/mobile/Library/Preferences/com.apple.UIKit.plist")
-            let UIKitPrefsDict = plistToDict(path: UIKitPrefsFile)
-            print(UIKitPrefsDict as Any)
-            if UIKitPrefsDict!["UIAnimationDragCoefficient"] != nil {
-                UIKitPrefsDict!["UIAnimationDragCoefficient"] = speed
+        let attributes = [FileAttributeKey.posixPermissions: 0o666]
+        
+        do {
+            try fm.setAttributes(attributes, ofItemAtPath: "/var/mobile/Library/Preferences/com.apple.UIKit.plist")
+            print("Set attributes \(attributes) on /var/mobile/Library/Preferences/com.apple.UIKit.plist")
+        } catch {
+            print("Warning: could not set attributes of plist")
+        }
+        if fm.isReadableFile(atPath: "/var/mobile/Library/Preferences/com.apple.UIKit.plist") {
+            if fm.isWritableFile(atPath: "/var/mobile/Library/Preferences/com.apple.UIKit.plist") {
+                print("Can write to plist")
+                let UIKitPrefsFile = URL(fileURLWithPath: "/var/mobile/Library/Preferences/com.apple.UIKit.plist")
+                if let UIKitPrefsDict = plistToDict(path: UIKitPrefsFile) {
+                    print(UIKitPrefsDict as Any)
+                    if UIKitPrefsDict["UIAnimationDragCoefficient"] != nil {
+                        UIKitPrefsDict["UIAnimationDragCoefficient"] = speed
+                    } else {
+                        UIKitPrefsDict.setValue(speed, forKey: "UIAnimationDragCoefficient")
+                    }
+                    print(UIKitPrefsDict as Any)
+                    do {
+                        try writeDictToPlist(dict: UIKitPrefsDict, path: UIKitPrefsFile)
+                    } catch {
+                        throw "Could not write plist, error: \(error.localizedDescription)"
+                        
+                    }
+                    print(plistToDict(path: UIKitPrefsFile)!["UIAnimationDragCoefficient"] as Any)
+                    if !((plistToDict(path: UIKitPrefsFile)!["UIAnimationDragCoefficient"]) as! Double == speed) {
+                        throw "File wasn't overwritten!"
+                    }
+                    let plistcontent = String(decoding: try! AbsoluteSolver.readFile(path: "/var/mobile/Library/Preferences/com.apple.UIKit.plist"), as: UTF8.self)
+                    print(plistcontent)
+                } else {
+                    throw "Unable to serialize plist!"
+                }
             } else {
-                UIKitPrefsDict?.setValue(speed, forKey: "UIAnimationDragCoefficient")
+                throw "UIKit Prefs is not writable!"
             }
-            print(UIKitPrefsDict as Any)
-            do {
-                try writeDictToPlist(dict: UIKitPrefsDict!, path: UIKitPrefsFile)
-            } catch {
-                throw "Could not write plist, error: \(error.localizedDescription)"
-            }
-            print(plistToDict(path: UIKitPrefsFile)!["UIAnimationDragCoefficient"] as Any)
-            if !((plistToDict(path: UIKitPrefsFile)!["UIAnimationDragCoefficient"]) as! Double == speed) {
-                throw "File wasn't overwritten!"
-            }
-            let plistcontent = String(decoding: try! AbsoluteSolver.readFile(path: "/var/mobile/Library/Preferences/com.apple.UIKit.plist"), as: UTF8.self)
-            print(plistcontent)
         } else {
-            throw "UIKit Prefs is not writable!"
+            throw "UIKit Prefs is not readable! Wtf?!"
         }
     } else {
          throw "Not unsandboxed?!"
@@ -86,11 +103,15 @@ func changeSpeed(_ speed: Double) throws {
 
 func getSpeed() -> Double {
     let UIKitPrefsFile = URL(fileURLWithPath: "/var/mobile/Library/Preferences/com.apple.UIKit.plist")
-    let UIKitPrefsDict = plistToDict(path: UIKitPrefsFile)
-    // print(UIKitPrefsDict as Any)
-    if UIKitPrefsDict!["UIAnimationDragCoefficient"] != nil {
-        return UIKitPrefsDict!["UIAnimationDragCoefficient"] as! Double
+        if let UIKitPrefsDict = plistToDict(path: UIKitPrefsFile) {
+        // print(UIKitPrefsDict as Any)
+        if UIKitPrefsDict["UIAnimationDragCoefficient"] != nil {
+        return UIKitPrefsDict["UIAnimationDragCoefficient"] as! Double
     } else {
+        return 1.0
+    }
+    } else {
+        print("File not readable?!")
         return 1.0
     }
 }

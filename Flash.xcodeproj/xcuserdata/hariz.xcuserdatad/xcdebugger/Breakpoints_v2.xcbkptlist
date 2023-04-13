@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B49AAD22-D9B4-4040-8EBF-111AA78B2B2F"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA0AAE3B-8C57-44CE-87AD-5F743B15CD62"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flash/AppFunctions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "changeSpeed(_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "EA0AAE3B-8C57-44CE-87AD-5F743B15CD62 - d18d6de377ae2c95"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Flash.changeSpeed(Swift.Double) throws -&gt; ()"
+                  moduleName = "Flash"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hariz/Flash/Flash/AppFunctions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "4800">
+               </Location>
+               <Location
+                  uuid = "EA0AAE3B-8C57-44CE-87AD-5F743B15CD62 - d18d6de377ae2c95"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Flash.changeSpeed(Swift.Double) throws -&gt; ()"
+                  moduleName = "Flash"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hariz/Flash/Flash/AppFunctions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "5236">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
