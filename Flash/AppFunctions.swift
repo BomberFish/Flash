@@ -68,6 +68,10 @@ func changeSpeed(_ speed: Double) throws {
             } catch {
                 throw "Could not write plist, error: \(error.localizedDescription)"
             }
+            print(plistToDict(path: UIKitPrefsFile)!["UIAnimationDragCoefficient"] as Any)
+            if !((plistToDict(path: UIKitPrefsFile)!["UIAnimationDragCoefficient"]) as! Double == speed) {
+                throw "File wasn't overwritten!"
+            }
         } else {
             throw "UIKit Prefs is not writable!"
         }
