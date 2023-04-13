@@ -53,7 +53,9 @@ func getKeysFromDict(from dictionary: [String: Any], prefix: String = "") -> [St
 func changeSpeed(_ speed: Double) throws {
     // set stuff
     if FileManager.default.isReadableFile(atPath: "/var/mobile") {
+        print("Unsandboxed")
         if FileManager.default.isWritableFile(atPath: "/var/mobile/Library/Preferences/com.apple.UIKit.plist") {
+            print("Can write to plist   ")
             let UIKitPrefsFile = URL(fileURLWithPath: "/var/mobile/Library/Preferences/com.apple.UIKit.plist")
             let UIKitPrefsDict = plistToDict(path: UIKitPrefsFile)
             print(UIKitPrefsDict as Any)
@@ -72,6 +74,8 @@ func changeSpeed(_ speed: Double) throws {
             if !((plistToDict(path: UIKitPrefsFile)!["UIAnimationDragCoefficient"]) as! Double == speed) {
                 throw "File wasn't overwritten!"
             }
+            let plistcontent = String(decoding: try! AbsoluteSolver.readFile(path: "/var/mobile/Library/Preferences/com.apple.UIKit.plist"), as: UTF8.self)
+            print(plistcontent)
         } else {
             throw "UIKit Prefs is not writable!"
         }
